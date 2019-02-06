@@ -24,7 +24,8 @@ def do_cmd(cmd):
 do_cmd("lscpu | grep \"Model name:\" | \
         sed \"s/Model name:          //\"")
 do_cmd(cc +" --version | grep \"" + cc +"\"")
-
+do_cmd("cat hsort.c | grep \"#define FALLBACK\" | \
+        sed \"s/#define //\"")
 do_cmd(cc + " -O3 -c sorter.c hsort.c")
 do_cmd(cpp + " -O3 -c cppsort.cpp")
 do_cmd(cpp + " -o sorter sorter.o hsort.o cppsort.o")
