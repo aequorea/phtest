@@ -4,7 +4,6 @@
 
 // insertion sort for partitions up to FALLBACK in size
 // 65 on Core I5 4690
-// 35 on Athlon 64 3500+
 // 35 on Pentium J2900
 // 18 on Raspberry Pi 3B+
 
