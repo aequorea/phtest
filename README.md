@@ -1,8 +1,8 @@
 ## phtest
 #### Pointerized hybrid quicksort test
-Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. On the Core I5 it's 65, on the Athlon 64 it's 35 and on the Raspberry pi it's 18.
+Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. On the Core I5 it's 65, on the Athlon 64 it's 35 on the Pentium J2900 it's 35 and on the Raspberry pi it's 18.
 
-    #define FALLBACK 35
+    #define FALLBACK 35     // fallback to insertion sort
     #define MAXSTACK 1000000*4
 
     static int *stack[MAXSTACK+4], **sp;
@@ -79,41 +79,18 @@ Here we compare the following pointerized hybrid quicksort with the C++ library 
         }
     }
 
-Athlon 64 averages
+Here are some results.
 
-          10 elements -- 4.7 %
-         100 elements -- 11.9 %
-        1000 elements -- 14.9 %
-       10000 elements -- 16.0 %
-      100000 elements -- 16.8 %
-     1000000 elements -- 17.7 %
- 
-    Overall Average: 13.7 %
+    Intel(R) Pentium(R) CPU  J2900  @ 2.41GHz
+    gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
 
-Core I5 averages
-  
-          10 elements -- 6.1 %
-         100 elements -- 24.3 %
-        1000 elements -- 16.9 %
-       10000 elements -- 13.6 %
-      100000 elements -- 10.8 %
-     1000000 elements -- 9.5 %
- 
-    Overall Average: 13.5 %
+          10 elements: test 790 ms, ref 1000 ms -- 26.5 %
+         100 elements: test 893 ms, ref 1000 ms -- 12.0 %
+        1000 elements: test 941 ms, ref 1000 ms -- 6.2 %
+       10000 elements: test 956 ms, ref 1000 ms -- 4.6 %
+      100000 elements: test 965 ms, ref 1002 ms -- 3.8 %
+     1000000 elements: test 1039 ms, ref 1073 ms -- 3.3 %
 
-Raspberry pi averages
+     Average --> 9.4 %
 
-          10 elements -- 21.3 %
-         100 elements -- -4.1 %
-        1000 elements -- -8.8 %
-       10000 elements -- -9.7 %
-      100000 elements -- -10.1 %
-     1000000 elements -- -9.8 %
- 
-    Overall Average: -3.6 %
-
-Overall, on the x64 machines we are 13+ % faster than the C++ library sort, but on the Raspberry pi we're a little bit slower. We note that we are faster on machines where we have shown pointerized code can run faster than array indexed code. On the Raspberry pi there is no advantage to pointerized code and we see that we are slower on that machine.
-
-More complete data may be found [here](https://github.com/aequorea/phsort/tree/master/bm).
-
-If you would like to try out the benchmark, make sure you have installed gcc and g++. Download the archive and run bench.py. To reduce the possibility of "linker bias" tilting the results, it builds and tests six different versions of the benchmark executable where the three different object files are linked in six different ways. The data is collected and averaged over runs of these executables.
+The average value shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested.
