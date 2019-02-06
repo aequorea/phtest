@@ -1,6 +1,6 @@
 ## phtest
 #### Pointerized hybrid quicksort test
-Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. This is the partition size to fall back from a quicksort to an insertion sort.
+Here we apply the pointerization technique to speed up a hybrid quicksort routine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. This is the partition size to fall back from a quicksort to an insertion sort.
 
     #define FALLBACK 35
     #define MAXSTACK 1000000*4
