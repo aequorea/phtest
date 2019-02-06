@@ -81,6 +81,20 @@ Here we apply the pointerization technique to speed up a hybrid quicksort routin
 
 Here are some results.
 
+    Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
+    gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+    FALLBACK 65
+
+          10: C++ 1000 ms, hybrid 907 ms -- 10.2 %
+         100: C++ 1000 ms, hybrid 798 ms -- 25.3 %
+        1000: C++ 1000 ms, hybrid 837 ms -- 19.5 %
+       10000: C++ 1000 ms, hybrid 856 ms -- 16.7 %
+      100000: C++ 1002 ms, hybrid 878 ms -- 14.1 %
+     1000000: C++ 1021 ms, hybrid 900 ms -- 13.5 %
+
+    Average --> 16.5 %
+
+
     Intel(R) Pentium(R) CPU  J2900  @ 2.41GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
     FALLBACK 35
