@@ -1,8 +1,8 @@
 ## phtest
 #### Pointerized hybrid quicksort test
-Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. On the Core I5 it's 65, on the Athlon 64 it's 35 on the Pentium J2900 it's 35 and on the Raspberry pi it's 18.
+Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. This is the partition size to fall back from a quicksort to an insertion sort.
 
-    #define FALLBACK 35     // fallback to insertion sort
+    #define FALLBACK 35
     #define MAXSTACK 1000000*4
 
     static int *stack[MAXSTACK+4], **sp;
