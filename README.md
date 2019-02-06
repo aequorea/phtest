@@ -108,4 +108,19 @@ Here are some results.
 
      Average --> 9.4 %
 
-The average value shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested.
+
+      ARMv7 Processor rev 4 (v7l)
+    gcc (Raspbian 6.3.0-18+rpi1+deb9u1) 6.3.0 20170516
+    FALLBACK 18
+
+          10: C++ 1000 ms, hybrid 823 ms -- 21.5 %
+         100: C++ 1000 ms, hybrid 1029 ms -- -2.8 %
+        1000: C++ 1000 ms, hybrid 1066 ms -- -6.2 %
+       10000: C++ 1000 ms, hybrid 1070 ms -- -6.6 %
+      100000: C++ 1005 ms, hybrid 1077 ms -- -6.6 %
+     1000000: C++ 1063 ms, hybrid 1142 ms -- -7.0 %
+
+     Average --> -1.3 %
+
+
+The average values shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested.
