@@ -1,5 +1,5 @@
 ## phtest
-# Pointerized hybrid quicksort test
+#### Pointerized hybrid quicksort test
 Here we compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. On the Core I5 it's 65, on the Athlon 64 it's 35 and on the Raspberry pi it's 18.
 
     #define FALLBACK 35
