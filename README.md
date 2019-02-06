@@ -84,13 +84,13 @@ Here are some results.
     Intel(R) Pentium(R) CPU  J2900  @ 2.41GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
 
-          10 elements: test 790 ms, ref 1000 ms -- 26.5 %
-         100 elements: test 893 ms, ref 1000 ms -- 12.0 %
-        1000 elements: test 941 ms, ref 1000 ms -- 6.2 %
-       10000 elements: test 956 ms, ref 1000 ms -- 4.6 %
-      100000 elements: test 965 ms, ref 1002 ms -- 3.8 %
-     1000000 elements: test 1039 ms, ref 1073 ms -- 3.3 %
+          10: C++ 1000 ms, hybrid 793 ms -- 26.0 %
+         100: C++ 1000 ms, hybrid 893 ms -- 11.9 %
+        1000: C++ 1000 ms, hybrid 942 ms -- 6.1 %
+       10000: C++ 1000 ms, hybrid 957 ms -- 4.5 %
+      100000: C++ 1007 ms, hybrid 971 ms -- 3.7 %
+     1000000: C++ 1071 ms, hybrid 1041 ms -- 2.9 %
 
-     Average --> 9.4 %
+     Average --> 9.2 %
 
 The average value shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested.
