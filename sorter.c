@@ -66,10 +66,10 @@ double show_perf(char *s, perf p)
 {
     double average = (double) p.testtime/(double) p.reftime;
     double percent = 100.0*(1.0-average)/average;
-    int testms = p.testtime/1000000;
-    int refms = p.reftime/1000000;
-    printf(" %s: test %d ms, ref %d ms -- %2.1lf %%\n", \
-             s, testms, refms, percent);
+    int hybrid_ms = p.testtime/1000000;
+    int cpp_ms = p.reftime/1000000;
+    printf(" %s: C++ %d ms, hybrid %d ms -- %2.1lf %%\n", \
+             s, cpp_ms, hybrid_ms, percent);
     return (percent);
 }
 
@@ -104,12 +104,12 @@ int main()
     b5 = benchmark(100000);
     b6 = benchmark(1000000);
 
-    avg += show_perf("     10 elements", b1);
-    avg += show_perf("    100 elements", b2);
-    avg += show_perf("   1000 elements", b3);
-    avg += show_perf("  10000 elements", b4);
-    avg += show_perf(" 100000 elements", b5);
-    avg += show_perf("1000000 elements", b6);
+    avg += show_perf("     10", b1);
+    avg += show_perf("    100", b2);
+    avg += show_perf("   1000", b3);
+    avg += show_perf("  10000", b4);
+    avg += show_perf(" 100000", b5);
+    avg += show_perf("1000000", b6);
 
     avg /= 6;
 
