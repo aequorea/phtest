@@ -1,6 +1,6 @@
 ## phtest
 #### Pointerized hybrid quicksort test
-Here we apply the pointerization technique to speed up a hybrid quicksort routine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers. We test on linux using the GCC and G++ compilers with -O3 optimizations. We have tuned the FALLBACK parameter to suit the machine. This is the partition size to fall back from a quicksort to an insertion sort.
+Here we apply the pointerization technique to speed up a hybrid quicksort routine. Our strategy to the best of our knowledge was to use the same algorithms that the C++ library sort uses for random integers, except we pointerize our versions and we tune the fallback parameter where the quicksort falls back to an insertion sort to suit the machine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers.
 
     #define FALLBACK 35
     #define MAXSTACK 1000000*4
@@ -79,7 +79,7 @@ Here we apply the pointerization technique to speed up a hybrid quicksort routin
         }
     }
 
-Here are some results.
+Here are some results. We tested on linux with the compiled code optimized with the -O3 parameter.
 
     Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
@@ -123,4 +123,4 @@ Here are some results.
      Average --> -1.3 %
 
 
-The average values shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested.
+The average values shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
