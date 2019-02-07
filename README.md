@@ -123,3 +123,6 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> -1.3 %
 
+The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. We note that the relative performance of the processors correlates with their performance on pointerized code in the [insertion sort benchmark](https://github.com/aequorea/pitest). This suggests there may be a relationship between the two. Evidently there is more to the picture than the fast insertion sort that this routine falls back to since on the Raspberry Pi we see the insertion sort is working very well on the smallest arrays but the performance drops off on the larger ones.
+
+If you want to try the benchmark program yourself run the python script bench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result.
