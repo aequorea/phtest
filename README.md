@@ -79,7 +79,8 @@ Here we apply the pointerization technique to speed up a hybrid quicksort routin
         }
     }
 
-Here are some results. We tested on linux with the compiled code optimized with the -O3 parameter.
+Here are some results. We tested on linux with the compiled code optimized with the -O3 parameter. The average values shown are the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
+
 
     Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
@@ -122,5 +123,3 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> -1.3 %
 
-
-The average values shown is the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
