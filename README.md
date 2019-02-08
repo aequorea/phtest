@@ -66,7 +66,6 @@ Here we apply the pointerization technique to speed up a hybrid quicksort routin
 
 Here are some results. We tested on linux with the compiled code optimized with the -O3 parameter. The average values shown are the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
 
-
     Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
     FALLBACK 65
@@ -79,7 +78,6 @@ Here are some results. We tested on linux with the compiled code optimized with 
      1000000: C++ 1021 ms, hybrid 900 ms -- 13.5 %
 
     Average --> 16.5 %
-
 
     Intel(R) Pentium(R) CPU  J2900  @ 2.41GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
@@ -94,6 +92,18 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> 9.4 %
 
+    AMD Athlon(tm) 64 Processor 3500+
+    gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+    FALLBACK 35
+
+          10: C++ 1000 ms, hybrid 985 ms -- 1.4 %
+         100: C++ 1000 ms, hybrid 923 ms -- 8.2 %
+        1000: C++ 1000 ms, hybrid 909 ms -- 10.0 %
+       10000: C++ 1000 ms, hybrid 926 ms -- 7.9 %
+      100000: C++ 1001 ms, hybrid 938 ms -- 6.8 %
+     1000000: C++ 1026 ms, hybrid 980 ms -- 4.7 %
+
+     Average --> 6.5 %
 
       ARMv7 Processor rev 4 (v7l)
     gcc (Raspbian 6.3.0-18+rpi1+deb9u1) 6.3.0 20170516
@@ -108,6 +118,6 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> -1.3 %
 
-The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. We note that the relative performance of the processors in this test correlates with their performance on pointerized code in the [insertion sort benchmark](https://github.com/aequorea/pitest). This suggests there may be a relationship between the two.
+The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. We note that the relative performance of the x64 processors in this test correlates with their performance on pointerized code in the [insertion sort benchmark](https://github.com/aequorea/pitest). The Athlon 64 is showing improvement over the C++ routine even though the insertion sort benchmark reveals no obvious benefit to pointerized code. On the other hand, the Raspberry Pi does less well than the C++ routine.
 
 If you want to try the benchmark program yourself run the python script bench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result.
