@@ -3,22 +3,7 @@
 Here we apply the pointerization technique to speed up a hybrid quicksort routine. Our strategy to the best of our knowledge was to use the same kinds of algorithms that the C++ library sort uses for random integers, except we pointerize our versions and we tune the fallback parameter where the quicksort falls back to an insertion sort to suit the machine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers.
 
     #define FALLBACK 35
-    #define MAXSTACK 1000000*4
-
-    static int *stack[MAXSTACK+4], **sp;
-
-    static void push(int *v)
-        { *sp++ = v; }
-    
-    static int *pop()
-        { return *--sp; }
-    
-    static void stackinit()
-        { sp = stack; }
-    
-    static int stackempty()
-        { return (sp==stack); }
-
+   
     static void isort(int *lp, int *rp)
     {
         int *ip, *jp, t;
