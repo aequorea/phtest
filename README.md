@@ -1,6 +1,6 @@
 ## phtest
 #### Pointerized hybrid quicksort test
-Here we apply the pointerization technique to speed up a hybrid quicksort routine. Our strategy to the best of our knowledge was to use the same kinds of algorithms that the C++ library sort uses for random integers, except we pointerize our versions and we tune the fallback parameter where the quicksort falls back to an insertion sort to suit the machine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers.
+Here we apply the pointerization technique to speed up a hybrid quicksort routine which falls back to an insertion sort for small arrays. The FALLBACK parameter which is the size of array to fall back with is tuned to suit the machine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers.
 
     #define FALLBACK 35
    
@@ -92,6 +92,19 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> 9.4 %
 
+    Intel(R) Core(TM)2 Duo CPU     U9600  @ 1.60GHz
+    Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+    FALLBACK 50
+
+          10: C++ 1000 ms, hybrid 1015 ms -- -1.5 %
+         100: C++ 1000 ms, hybrid 889 ms -- 12.4 %
+        1000: C++ 1000 ms, hybrid 895 ms -- 11.7 %
+       10000: C++ 1000 ms, hybrid 892 ms -- 12.1 %
+      100000: C++ 1000 ms, hybrid 900 ms -- 11.1 %
+     1000000: C++ 1037 ms, hybrid 923 ms -- 12.3 %
+
+     Average --> 9.7 %
+  
     AMD Athlon(tm) 64 Processor 3500+
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
     FALLBACK 35
@@ -118,6 +131,9 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> -1.3 %
 
-The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. We note that the relative performance of the x64 processors in this test correlates with their performance on pointerized code in the [insertion sort benchmark](https://github.com/aequorea/pitest). The Athlon 64 is showing improvement over the C++ routine even though the insertion sort benchmark reveals no obvious benefit to pointerized code. On the other hand, the Raspberry Pi does less well than the C++ routine.
+The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. 
 
-If you want to try the benchmark program yourself run the python script bench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result.
+If you want to try the benchmark program yourself on linux run the python script bench.py. On a mac run macbench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result.
+
+On either platform you'll need to make sure to install the command-line development tools.
+
