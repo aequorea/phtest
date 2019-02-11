@@ -2,12 +2,7 @@
    hsort.c -- hybrid quicksort with median of three pivot
 */
 
-// insertion sort for partitions up to FALLBACK in size
-// 65 on Core I5 4690
-// 35 on Pentium J2900
-// 18 on Raspberry Pi 3B+
-
-#define FALLBACK 35
+#define FALLBACK 35  // insertion sort for arrays smaller than this
 
 // pointerized stack stuff
 
