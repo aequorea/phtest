@@ -105,6 +105,19 @@ Here are some results. We tested on linux with the compiled code optimized with 
 
      Average --> 9.7 %
   
+    AMD E-350 Processor
+    gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+    FALLBACK 30
+
+          10: C++ 1000 ms, hybrid 872 ms -- 14.6 %
+         100: C++ 1000 ms, hybrid 906 ms -- 10.3 %
+        1000: C++ 1000 ms, hybrid 899 ms -- 11.2 %
+       10000: C++ 1000 ms, hybrid 888 ms -- 12.7 %
+      100000: C++ 1004 ms, hybrid 888 ms -- 13.1 %
+     1000000: C++ 1012 ms, hybrid 903 ms -- 12.0 %
+
+     Average --> 12.3 %
+
     AMD Athlon(tm) 64 Processor 3500+
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
     FALLBACK 35
