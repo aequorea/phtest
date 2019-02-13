@@ -64,7 +64,7 @@ Here we apply the pointerization technique to speed up a hybrid quicksort routin
         }
     }
  
-Here are some results. We tested on linux with gcc using -O3 optimization. On a mac we tested with clang also with -O3 optimization. Average values shown are the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
+Here are some results. We tested on linux with gcc using -O3 optimization. Average values shown are the average improvement of the hybrid quicksort routine over the C++ routine for the array sizes tested. 
 
     Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
@@ -92,19 +92,6 @@ Here are some results. We tested on linux with gcc using -O3 optimization. On a 
 
      Average --> 9.4 %
 
-    Intel(R) Core(TM)2 Duo CPU     U9600  @ 1.60GHz
-    Apple LLVM version 10.0.0 (clang-1000.10.44.4)
-    FALLBACK 50
-
-          10: C++ 1000 ms, hybrid 1015 ms -- -1.5 %
-         100: C++ 1000 ms, hybrid 889 ms -- 12.4 %
-        1000: C++ 1000 ms, hybrid 895 ms -- 11.7 %
-       10000: C++ 1000 ms, hybrid 892 ms -- 12.1 %
-      100000: C++ 1000 ms, hybrid 900 ms -- 11.1 %
-     1000000: C++ 1037 ms, hybrid 923 ms -- 12.3 %
-
-     Average --> 9.7 %
-  
     AMD E-350 Processor
     gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
     FALLBACK 30
