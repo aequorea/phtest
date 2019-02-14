@@ -133,7 +133,5 @@ Here are some results. We tested on linux with gcc using -O3 optimization. Avera
 
 The x64 processors are overall faster than the C++ library routine and the Raspberry Pi is on the average a little bit slower. 
 
-If you want to try the benchmark program yourself on linux run the python script bench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result.
-
-On either platform you'll need to make sure to install the command-line development tools.
+If you want to try the benchmark program yourself on linux run the python script bench.py. It compiles the program, collects some information about your environment and displays it along with the benchmark result. You'll need to make sure to install the command-line development tools.
 
