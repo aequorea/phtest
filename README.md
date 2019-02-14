@@ -1,5 +1,6 @@
 ## phtest
-#### Pointerized hybrid quicksort test
+Pointerized hybrid quicksort test.
+
 Here we apply the pointerization technique to speed up a hybrid quicksort routine which falls back to an insertion sort for small arrays. The FALLBACK parameter which is the size of array to fall back with is tuned to suit the machine. We compare the following pointerized hybrid quicksort with the C++ library sort on arrays of random integers.
 
     #define FALLBACK 35
